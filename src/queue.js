@@ -41,8 +41,13 @@ class Queue {
   }
 
   dequeue() {
+    if (this.length === 0) {
+      return null;
+    }
     let curItem = this.head;
     this.head = curItem.next; 
+    this.length--;
+    return curItem.value;
   }
 }
 
